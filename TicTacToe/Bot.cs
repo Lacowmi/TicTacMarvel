@@ -62,14 +62,14 @@ namespace TicTacToe
                     currentMove[0] = 1;
                     currentMove[1] = 1;
                 }
-                if (field[1, 1] != Convert.ToInt32(side) && field[1, 1] == Convert.ToInt32(!side)) //вариант хода,если центр занят ботом
+                if (field[1, 1] != Convert.ToInt32(side) && field[1, 1] != -5) //вариант хода,если центр занят ботом
                 {
                     isDone = true;
                     do
                     {
                         index1 = rand.Next(0, 3);
                         index2 = rand.Next(0, 3);
-                    } while (index1 == 1 && index2 == 1 || field[index1, index2] == Convert.ToInt32(side));
+                    } while (index1 == 1 && index2 == 1 || field[index1, index2] == Convert.ToInt32(side) || field[index1, index2] == Convert.ToInt32(!side));
                     currentMove[0] = index1;
                     currentMove[1] = index2;
                 }

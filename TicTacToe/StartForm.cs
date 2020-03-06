@@ -22,10 +22,7 @@ namespace TicTacToe
 
         private void button2_Click(object sender, EventArgs e)
         {
-            side = true;
-            GameForm.playerSide(side);
-            gameForm.Show();
-            this.Hide();
+            setSide(true);
         }
 
         private void StartForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -35,7 +32,11 @@ namespace TicTacToe
 
         private void button3_Click(object sender, EventArgs e)
         {
-            side = false;
+            setSide(false);
+        }
+
+        private void setSide(bool side)
+        {
             GameForm.playerSide(side);
             gameForm.Show();
             this.Hide();
