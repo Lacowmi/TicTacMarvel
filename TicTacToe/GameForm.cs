@@ -20,6 +20,7 @@ namespace TicTacToe
         int rounds = 7;                          //к-во раундов
 
 
+
         public GameForm()
         {
             InitializeComponent();
@@ -226,6 +227,9 @@ namespace TicTacToe
 
         private void move(int index1, int index2, bool side, Button button)
         {
+            System.Media.SoundPlayer knock = new System.Media.SoundPlayer();
+            knock.SoundLocation = "knock.wav";
+            knock.Play();
             if (logic.field[index1, index2] == -5)
             {
                 logic.field[index1, index2] = Convert.ToInt32(side);
